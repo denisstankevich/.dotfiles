@@ -3,8 +3,8 @@ set $mod Mod4
 # autostart apps
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf &
 exec flameshot &
+exec dunst &
 exec redshift
-exec sxhkd
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec_always feh --bg-scale ~/wallpappers/car.jpg
 exec --no-startup-id exec alacritty
@@ -41,8 +41,11 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-## Take a Screenshot
+# Take a Screenshot
 bindsym $mod+Shift+s exec flameshot gui
+
+# open ranger
+# bindsym $mod+e exec ranger
 
 # start a terminal
 bindsym $mod+Return exec alacritty
@@ -58,10 +61,10 @@ bindsym $mod+space exec --no-startup-id rofi -show combi
 bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # change focus
-bindsym Ctrl+h focus left
-bindsym Ctrl+j focus down
-bindsym Ctrl+k focus up
-bindsym Ctrl+l focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
