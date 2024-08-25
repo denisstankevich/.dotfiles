@@ -1,0 +1,119 @@
+{
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "height": 32,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "reload_style_on_change": true,
+  "modules-left": [
+    "custom/l_end",
+    "hyprland/workspaces",
+    "mpris",
+    "custom/r_end"
+  ],
+  "modules-center": [
+    "custom/l_end",
+    "clock",
+    "custom/r_end"
+  ],
+  "modules-right": [
+    "custom/l_end",
+    "hyprland/language",
+    "pulseaudio",
+    "custom/power",
+    "custom/r_end"
+  ],
+  "mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "player-icons": {
+      "default": "▶",
+      "spotify": " ",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "playing": "▶",
+      "paused": ""
+    },
+    "dynamic-order": [
+      "artist",
+      "title"
+    ],
+    "title-len": 10,
+    "ignored-players": [
+      "firefox"
+    ],
+    "interval": 1
+  },
+  "custom/power": {
+    "format": "{}",
+    "rotate": 0,
+    "on-click": "exec wlogout",
+    "interval": 86400, // once every day
+    "tooltip": true
+  },
+  "custom/l_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/r_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+    "sort-by-number": true
+  },
+  "hyprland/language": {
+    "format": "{}",
+    "format-en": "US",
+    "format-ru": "RU"
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "rotate": 0,
+    "format-alt": "{:%R 󰃭 %d·%m·%y}",
+    "tooltip-format": "<span>{calendar}</span>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down"
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}",
+    "rotate": 0,
+    "format-muted": "󰖁 MUTED",
+    "on-click": "pamixer -t",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    }
+  }
+}
