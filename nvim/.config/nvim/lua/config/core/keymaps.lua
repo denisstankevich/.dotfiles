@@ -1,8 +1,8 @@
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", "<CMD>w<CR>", { desc = "Save file" })
---[[ vim.keymap.set("n", "<leader>e", function()
-	require("oil").toggle_float()
-end, { desc = "Toggle Oil Explorer" }) ]]
+vim.keymap.set("n", "<leader>e", function()
+  require("oil").toggle_float()
+end, { desc = "Toggle Oil Explorer" })
 
 vim.keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split verticaly" })
 vim.keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split horizontaly" })
