@@ -6,12 +6,6 @@ vim.api.nvim_create_autocmd("PackChanged", {
 	end,
 })
 
-vim.pack.add({
-	"https://github.com/nvim-lua/plenary.nvim",
-	"https://github.com/nvim-telescope/telescope-fzf-native.nvim",
-	"https://github.com/nvim-telescope/telescope.nvim",
-})
-
 local builtin = require("telescope.builtin")
 
 vim.keymap.set("n", "<leader>ff", builtin.find_files)
@@ -61,9 +55,12 @@ map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
 map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
 require("telescope").setup({
+	defaults = {
+		file_ignore_patterns = { "venv/", "%.venv/" },
+	},
 	pickers = {
 		find_files = {
-			file_ignore_patterns = { "node_modules" },
+			file_ignore_patterns = { "node_modules", "venv/", "%.venv/" },
 			hidden = true,
 		},
 	},

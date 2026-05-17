@@ -1,8 +1,3 @@
-vim.pack.add({
-	"https://github.com/rafamadriz/friendly-snippets",
-	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("1.x") },
-})
-
 require("blink.cmp").setup({
 	keymap = { preset = "super-tab" },
 

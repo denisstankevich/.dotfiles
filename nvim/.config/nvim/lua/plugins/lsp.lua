@@ -1,14 +1,8 @@
-vim.pack.add({
-	"https://github.com/neovim/nvim-lspconfig",
-})
+local capabilities = vim.lsp.protocol.make_client_capabilities()
 
-vim.lsp.enable("lua_ls")
-vim.lsp.enable("ts_ls")
-vim.lsp.enable("html")
-vim.lsp.enable("cssls")
-vim.lsp.enable("jsonls")
-vim.lsp.enable("basedpyright")
-vim.lsp.enable("ruff")
+vim.lsp.config("*", {
+	capabilities = capabilities,
+})
 
 vim.lsp.config("lua_ls", {
 	settings = {
@@ -18,4 +12,14 @@ vim.lsp.config("lua_ls", {
 			},
 		},
 	},
+})
+
+vim.lsp.enable({
+	"lua_ls",
+	"ts_ls",
+	"html",
+	"cssls",
+	"jsonls",
+	"basedpyright",
+	"ruff",
 })

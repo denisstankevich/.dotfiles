@@ -17,6 +17,7 @@ vim.o.hlsearch = false -- Set highlight on search (default: true)
 vim.opt.termguicolors = true -- Set termguicolors to enable highlight groups (default: false)
 vim.o.swapfile = false -- Creates a swapfile (default: true)
 vim.o.smartindent = true -- Make indenting smarter again (default: false)
+vim.o.smarttab = true
 vim.o.backspace = "indent,eol,start" -- Allow backspace on (default: 'indent,eol,start')
 vim.o.undofile = true
 vim.o.backup = false
@@ -77,3 +78,18 @@ require("vim._core.ui2").enable({
 		},
 	},
 })
+
+-- <CR> mapping
+vim.keymap.set("i", "<CR>", function()
+	local line = vim.api.nvim_get_current_line()
+	local col = vim.api.nvim_win_get_cursor(0)[2]
+	local before = line:sub(col, col)
+	local after = line:sub(col + 1, col + 1)
+
+	local pairs = { ["{"] = "}", ["("] = ")", ["["] = "]" }
+
+	if pairs[before] == after then
+		return "<CR><ESC>O"
+	end
+	return "<CR>"
+end, { expr = true, noremap = true })
