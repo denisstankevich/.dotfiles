@@ -10,25 +10,25 @@
   "modules-center": ["custom/l_end", "clock", "custom/r_end"],
   "modules-right": [
     "custom/l_end",
-    "tray",
+    "group/tray",
     "hyprland/language",
     "pulseaudio",
     "custom/r_end"
   ],
-  "group/hardware": {
+  "group/tray": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
       "transition-left-to-right": false
     },
-    "modules": ["custom/temperature", "temperature"]
+    "modules": ["custom/tray", "tray"]
   },
   "temperature": {
     "format": "{temperatureC}°C",
     "hwmon-path": "/sys/class/hwmon/hwmon1/temp1_input"
   },
-  "custom/temperature": {
-    "format": ""
+  "custom/tray": {
+    "format": "󰍜"
   },
   "custom/power": {
     "format": "{}",
