@@ -42,6 +42,8 @@ hl.on("hyprland.start", function()
 	hl.exec_cmd(terminal)
 	hl.exec_cmd("zen-browser", { workspace = "2 silent" })
 	hl.exec_cmd("Telegram", { workspace = "3 silent" })
+	hl.exec_cmd("udiskie --tray")
+	hl.exec_cmd("systemctl --user start hyprpolkitagent")
 	hl.exec_cmd("waybar & hyprpaper & dunst & gammastep")
 end)
 

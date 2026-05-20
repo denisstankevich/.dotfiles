@@ -3,7 +3,7 @@ set -euo pipefail
 
 PACKAGES=(
     alsa-utils amd-ucode bat bluez bluez-utils btop clang
-    dunst fd feh firefox fzf gammastep ghostty git grim
+    dunst fd feh firefox fzf ghostty git grim
     hyprlock hyprpaper hyprpicker imagemagick lazygit
     lib32-nvidia-utils libnotify man-db networkmanager
     noto-fonts noto-fonts-cjk noto-fonts-emoji noto-fonts-extra
@@ -14,7 +14,7 @@ PACKAGES=(
     unrar unzip vlc vlc-plugin-ffmpeg waybar wireplumber
     wl-clipboard woff2-font-awesome wofi
     xdg-desktop-portal-hyprland xdg-user-dirs
-    yazi zip zoxide zsh
+    yazi zip zoxide zsh hyprsunset
 )
 
 echo "Updating system..."
